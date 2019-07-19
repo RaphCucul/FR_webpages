@@ -1,0 +1,73 @@
+.header {
+    padding: 80px; /* some padding */
+    text-align: center; /* center the text */
+    background: #167ad8; 
+    color: white; /* white text color */
+  }
+  
+  /* Increase the font size of the <h1> element */
+  .header h1 {
+    font-size: 40px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+  
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .main-container {
+    flex: 70%; /* Set the width of the main content */
+    background-color: white; /* White background color */
+    padding: 10px; /* Some padding */
+    height: 100%;
+  }
+
+  .tab-container {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 20%;
+    height: 100%;
+  }
+  
+  a.tabLink {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    list-style: none;
+
+    display: block;
+    /*background-color: inherit;*/
+    color: black;
+    padding: 10px 5px;
+    width: 100%;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    color: initial;
+    border: 1px solid rgb(119, 119, 119);
+}
+  
+  /* Change background color of buttons on hover */
+  a.tabLink:hover {
+    background-color: rgb(233, 27, 27);
+    color: white;
+  }
+  
+  /* Create an active/current "tab button" class */
+  a.tabLink:focus {
+    background-color: rgb(148, 196, 255);
+  }
+
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+  }

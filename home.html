@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body>
+    <p>
+        <h3>Videoframes registration</h3>
+        The program is based on a console application written in C++ aimed on the registration of videoframes, using
+        OpenCV libraries, which are used for image processing. The source code of the console app with additional
+        informations (in Czech) can be found <a href="https://www.vutbr.cz/studenti/zav-prace/detail/110555">here</a>.
+        Check the <a href="https://github.com/RaphCucul/Frames-registration/wiki">Wiki</a> page to learn more about the program.
+    </p>
+    <p>
+        The program is designed to register videoframes with specific content - retinal fundus.
+        The example of such videoframe is shown below.
+        <img src="./images/videoFrameExample.png" alt="example" style="max-width:100%;height:auto;">
+    </p>
+
+    <p>
+        The program is using Frangi filter during videoframe preprocessing. The code for Frangi filter can be found
+        <a href="https://github.com/ntnu-bioopt/libfrangi.git">here</a>.
+        The program was created using OpenCV 3.2.0 and Qt 5.9.1. To run the program properly, it is necessary to modify phase
+        correlation functions in the OpenCV source before compiling the libraries. Folder
+        <a href="https://github.com/RaphCucul/Frames-registration/tree/master/OpenCV_phaseCorr">OpenCV_phaseCorr</a> contains
+        the files with modified content. If the newer version of OpenCV is used, it is necessary to implement changes
+        shown in those files.
+    </p>    
+    <p>
+        <h3>Sources of extra content</h3>
+        It was already mentioned in the text above, that this program uses third party Frangi filter C++ implementation.
+        But the program also contains icons. Some of them can be found here:
+        <ul>
+        <li><a href="https://icons8.com/iconizer/en/search/1/collection:Elegant_Themes_Icons">Elegant themes icons</a></li>
+        <li><a href="https://icons8.com/iconizer/en/search/1/collection:Fugue_Icons">Fugue icons</a></li>
+        <li><a href="https://icons8.com/iconizer/en/search/1/collection:Free_Applications_Icons">Free applications icons</a></li>
+        </ul>
+    </p>
+    <p>
+        Some of them were created in the online tool <a href="https://vectr.com">Vectr</a>.
+         The rest was created in GIMP.
+    </p>
+</body>
+</html>

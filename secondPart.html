@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body>
+    <p>
+        <h3>Second part</h3>
+        At the end of this part, video frames will be divided into three categories. Each category is represented by
+        index of suitability. There are three indexes of suitability: 0,4 and 5. Video frame with index 0 is
+        supposed to be the ideal frame and the complete registration algorithm is applied.
+    </p>
+    <p>Video frame with index 4 means the video frame is supposed to be blurred, or with light reflection. Therefore
+        there is a high probability that the registration of this video frame can fail when the control maximal
+        registration shift would be exceeded. Video frame with index 5 will be written to the new video without
+        any changes.
+    </p>
+    <p>
+        <h4>Control averages</h4>
+        The value of POC function maxim can be used as a video frame quality mark, along with entropy and tennengrad.
+        If the value of absolute POC function maximum <i>SHAMPf</i> is used to calculate indicator <i>PMPf</i>
+        using the equation
+    </p>
+    <p>
+        <img src="images/pmpf.PNG" alt="pmpf" style="max-width:100%;height:auto;">
+    </p>
+    <p>
+        The lower <i>PMPf</i> indicator is, the more sharper the video frame is and vice versa. The value of the
+        indicator
+        vary from 18 to 90. To compare video frames using this indicator, it is necessary to calculate average
+        <i>PMPf</i>
+        from the video frames, which were marked as suitable video frames at the end of the first part using the
+        referential video frame.
+    </p>
+    <p>
+        <img src="images/pmpf_aver.PNG" alt="pmpfAver" style="max-width:100%;height:auto;">
+    </p>
+    <p>
+        <h4>First phase</h4>
+        <img src="images/firstPhase.png" alt="FP" style="max-width:100%;height:auto;">
+    </p>
+    <p>
+        <h4>Second phase</h4>
+        <img src="images/secondPhase.png" alt="SP" style="max-width:100%;height:auto;">
+    </p>
+    <p>
+        <h4>Third phase</h4>
+        <img src="images/thirdPhase.png" alt="TP" style="max-width:100%;height:auto;">
+    </p>
+</body>
+
+</html>

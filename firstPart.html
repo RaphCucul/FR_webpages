@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body>
+    <p>
+        <h3>First part</h3>
+        In the first part, all video frames are analysed
+        to determine, what frames are not suitable for registration algorithm- those will be written to the 
+        final video witout any changes. Typical example of skipped video frame is shown below.
+    </p>
+    <p>
+        <img src="./images/tooBright.png" alt="bright" style="max-width:100%;height:auto;">
+    </p>    
+    <p>
+        <h4>Entropy and tennengrad</h4>
+        The entropy and variation of tennengrad operator are calculated for all video frames. To calculated entropy, it is necessary
+        to filter the video frame with median filter (window size 5). The video frame is then convolved with Sobel operator for both axes.
+        Then the entropy can be calculated from this video frame histogram using the formula below. When the entropy is low, 
+        it may indicate the video frames is blurred.
+    </p>
+    <p>
+        <img src="./images/entropy.PNG" alt="entropy" style="max-width:100%;height:auto;">
+    </p>
+    <p>
+        Tennengrad operator is used to determine image sharpeness and it is calculated using equation
+    </p>
+    <p>
+        <img src="./images/tennengrad.PNG" alt="bright" style="max-width:100%;height:auto;">
+    </p>
+    <p>
+        The equation requires the threshold is applied on the image <i>S(x,y)</i>, but because of high variability of videos
+        the algorithm uses average value of gradient amplitudes of the video frame <i>S(x,y)</i>.
+    </p>    
+    <p><h4>Referential video frame identification</h4>
+        The referential video frame (RVF) is found using previously computed entropy values. Because the video frame with the maximal 
+        entropy could not be the best video frame in the video, the RVF is the video frame with 20th highest entropy value. Number 
+        twenty was derived empirically.  
+    </p>    
+    <p>
+        <h4>First suitability check</h4>
+        The technique with two thresholds is used to determine, for the first time, if the video frames are suitable for 
+        registration or not. Because the tilt of the entropy and tennengrad curve can vary video from video, the best approach
+        was to devide the entropy values into several "windows". The median of entropy values in the each window was calculated and 
+        then the thresholds were applied. 
+    </p>
+</body>
+</html>
