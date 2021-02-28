@@ -1,0 +1,15 @@
+{
+    "datFilesPath": [
+        "D:/Qt_projects/video_data"
+    ],
+    "parametersFrangiFiltr": [
+        "D:/Qt_projects/frangi",
+        "D:/Qt_projects/frangi"
+    ],
+    "saveVideosPath": [
+        "D:/Qt_projects/video_processed"
+    ],
+    "videosPath": [
+        "D:/Qt_projects/video_orig"
+    ]
+}
