@@ -5,20 +5,21 @@
 <body>
     <p>
         <h3>Second part</h3>
-        At the end of this part, video frames will be divided into three categories. Each category is represented by
-        index of suitability. There are three indexes of suitability: 0,4 and 5. Video frame with index 0 is
+        At the end of this part, frames are divided into three categories. Each category is represented by
+        index of suitability (so-called evaluation index in the program itself). There are three indexes of suitability: 0, 1, 4 and 5. Frame with index 0 is
         supposed to be the ideal frame and the complete registration algorithm is applied.
     </p>
-    <p>Video frame with index 4 means the video frame is supposed to be blurred, or with light reflection. Therefore
-        there is a high probability that the registration of this video frame can fail when the control maximal
-        registration shift would be exceeded. Video frame with index 5 will be written to the new video without
-        any changes.
+    <p>Index 1 says a frame contains some light artefact or is slightly blurred, but the registration algorithm can process this frame. 
+        Index 4 means a frame is more 'damaged' then a frame with index 1. Therefore,
+        there is a high probability that the registration of this frame can fail. Incomplete registration algorithm is applied on a frame 
+        with index 4.Video frame with index 5 will be written to the new video without
+        any changes (or it may be skipped, depends on user's setting).
     </p>
     <p>
         <h4>Control averages</h4>
-        The value of POC function maxim can be used as a video frame quality mark, along with entropy and tennengrad.
-        If the value of absolute POC function maximum <i>SHAMPf</i> is used to calculate indicator <i>PMPf</i>
-        using the equation
+        The value of POC function maximum can be used as a frame quality mark, along with entropy and tennengrad.
+        The value of absolute POC function maximum <i>SHAMPf</i> is used to calculate indicator <i>PMPf</i>
+        using the equation:
     </p>
     <p>
         <img src="images/pmpf.PNG" alt="pmpf" style="max-width:100%;height:auto;">
@@ -26,10 +27,9 @@
     <p>
         The lower <i>PMPf</i> indicator is, the more sharper the video frame is and vice versa. The value of the
         indicator
-        vary from 18 to 90. To compare video frames using this indicator, it is necessary to calculate average
+        vary from 18 to 90. To compare frames using this indicator, it is necessary to calculate average
         <i>PMPf</i>
-        from the video frames, which were marked as suitable video frames at the end of the first part using the
-        referential video frame.
+        from those frames marked as suitable for the registration in the end of the first part.
     </p>
     <p>
         <img src="images/pmpf_aver.PNG" alt="pmpfAver" style="max-width:100%;height:auto;">
